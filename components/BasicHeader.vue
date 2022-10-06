@@ -1,21 +1,22 @@
 <template>
-<div class="topic">
-<img  class="bitcoin_icon" src="../png/bitcoin-btc-logo.png">
-<span class="title">BITCOIN FRENZY</span>
-<span class="bitcoin_price_title"> 1 Bitcoin = {{bitcoinRate}} $</span>
-</div>
+  <div class="topic">
+    <img  class="bitcoin_icon" src="../png/bitcoin-btc-logo.png">
+    <span class="title">BITCOIN FRENZY</span>
+    <span class="bitcoin_price_title"> 1 Bitcoin = {{bitcoinRate}} $</span>
+    <div class="users_money">
+      <span >{{usersMoney}} $</span>
+      <span>{{usersBitcoin}} BITCOIN</span>
+    
+    </div>
+  </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
 
 export default {
   name: 'BasicHeader',
-  computed: {
-    bitcoinRate() {
-      return this.$store.getters.getBitcoinRate
-    }
-}
-
+  computed: mapState(['bitcoinRate', 'usersMoney', 'usersBitcoin'])
 }
 
 </script>
@@ -42,10 +43,18 @@ export default {
   }
   .bitcoin_price_title {
     color: white;
-    margin-left: 35%;
+    margin-left: 32%;
     margin-top: 10px;
     font-weight: 200;
     font-size: 18px;
+  }
+  .users_money {
+    color: white;
+    font-weight: 200;
+    margin-left: 35%;
+    display: flex;
+    flex-direction: column;
+
   }
 
 </style>
