@@ -2,7 +2,7 @@
 <div class="left-navbar">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <nuxt-link active-class="active" class="nav-link" to="/"> MY WALLET </nuxt-link>
+        <nuxt-link  active-class="active" class="nav-link" to="/"> MY WALLET </nuxt-link>
       </li>
       <li class="nav-item">
         <nuxt-link active-class="active" class="nav-link" to="/buy">BUY BITCOIN</nuxt-link>
@@ -24,6 +24,9 @@ export default {
 }
 </script>
 <style>
+  body {
+    overflow: hidden;
+  }
  .left-navbar {
     position: absolute;
   /* margin-top: 55px; */
@@ -36,6 +39,12 @@ export default {
     color: white;
     font-weight: 300;
     margin-left:  20px;
+    font-size: 18px;
+ }
+
+ .navbar-nav {
+  margin-left: 10px;
+  margin-top: 45px;
  }
 
 </style>

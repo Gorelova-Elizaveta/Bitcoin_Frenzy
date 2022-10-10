@@ -3,18 +3,23 @@
     <div class="text_block">
       <span class="ffff">Your Bitcoin wallet</span>
       <span class="ffff">You now own {{usersBitcoin}} Bitcoins</span>
-      <button class="moneys_button moneys_button-indent ">deposit 100$</button>
-      <button class="moneys_button">withdraw 100$</button>
+      <button  @click="setUsersMoneyDeposit" class="moneys_button moneys_button-indent ">deposit 100$</button>
+      <button @click="setUsersMoneyWithdraw" class="moneys_button">withdraw 100$</button>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
  export default {
-  computed: mapState([ 'usersBitcoin'])
-}
+  computed: mapState([ 'usersBitcoin']),
+  
+  methods:{
+    ...mapMutations(['setUsersMoneyDeposit', 'setUsersMoneyWithdraw']),
+  }
+ }
+
 
 </script>
 
@@ -22,10 +27,9 @@ import { mapState } from 'vuex'
   .wallet_container{
     position: absolute;
     width:700px;
-    height: 600px;
-    background-color: red;
-    margin-left: 20%;
-    margin-top: 15%;
+    height: 400px;
+    margin-left: 10%;
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
   }
@@ -51,7 +55,8 @@ import { mapState } from 'vuex'
   }
 
   .moneys_button:hover{
-    background-color: rgb(10, 25, 69)
+    background-color: rgb(10, 25, 69);
+    transition: 1s;
   }
   
   .moneys_button-indent {

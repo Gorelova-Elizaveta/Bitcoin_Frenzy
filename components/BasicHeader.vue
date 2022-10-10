@@ -14,10 +14,10 @@
 <script>
   import { mapState } from 'vuex'
 
-export default {
-  name: 'BasicHeader',
-  computed: mapState(['bitcoinRate', 'usersMoney', 'usersBitcoin'])
-}
+  export default {
+    name: 'BasicHeader',
+    computed: mapState(['bitcoinRate', 'usersMoney', 'usersBitcoin'])
+  } 
 
 </script>
 <style>
