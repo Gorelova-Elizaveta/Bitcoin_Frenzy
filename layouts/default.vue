@@ -11,7 +11,11 @@
 </template>
 <script>
   import BasicComponents from "../components/BasicComponents.vue";
- export default {
+  
+  export default {
   components: { BasicComponents }
- }
+   }
+
+
+
 </script>

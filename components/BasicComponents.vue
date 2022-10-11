@@ -3,15 +3,17 @@
         <BasicHeader/>
         <BasicLeftNavbar/>
         <BasicActionWindow/>
+        <BasicError/>
     </div>
 </template>
 <script>
     import BasicHeader from './BasicHeader.vue';
-    import BasicLeftNavbarVue from './BasicLeftNavbar.vue';
     import BasicLeftNavbar from './BasicLeftNavbar.vue';
     import BasicActionWindow from './BasicActionWindow.vue';
+    import BasicError from './BasicError.vue';
+
     export default {
         name: "BasicComponents",
-        components: { BasicHeader, BasicLeftNavbar, BasicActionWindow },
+        components: { BasicHeader, BasicLeftNavbar, BasicActionWindow, BasicError },
     }
 </script>

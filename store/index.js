@@ -3,6 +3,7 @@ export const state = () => ({
     usersMoney: 200,
     usersBitcoin: 0,
     actionList: [],
+    errors: [],
 })
 
 export const mutations = {
@@ -10,7 +11,7 @@ export const mutations = {
         
     },
     setUsersMoneyWithdraw(state) {
-        if ( state.usersMoney < 100) { alert('impossible to withdraw')}
+        if ( state.usersMoney < 100) { state.errors.push('impossible to withdraw')}
         else{
           state.usersMoney -= 100
           state.actionList.unshift({value:'100$ Withdrawal', date: Date.now()});
@@ -50,7 +51,12 @@ export const mutations = {
             state.actionList.unshift({value:'Decreased Bitcoin price by 1,000$', date: Date.now()})
         }
 
+
     },
+    setErrorsClear(state) {
+        state.errors =[]
+
+    }
 
 }
   

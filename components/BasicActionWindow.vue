@@ -4,7 +4,7 @@
     <ul class="catalogue" id="v-for-object">
         <li class="list-child" v-for="data of actionList" :key="data.date" >
             <div class="list-value">{{ new Date(data.date).toLocaleString().slice(0, -3) }} </div>
-            <div class="list-value">{{ data.value }}</div>
+            <div class="list-value-1">{{ data.value }}</div>
         </li>
     </ul>
 
@@ -28,7 +28,8 @@
         right: 0;
         width:  300px;
         height: 100vh;
-        background-color: rgb(210 210 210);;
+        background-color: rgb(210 210 210);
+        overflow: scroll;
     }
     .catalogue {
         color: rgb(31, 55, 125);
@@ -44,8 +45,8 @@
         margin-left: 10px;
     }
 
-    .list-value{
-        padding: 15px 0 32px 45px;
+    .list-value, .list-value-1 {
+        padding: 5px 0 22px 45px;
     }
 
     .empty_history {
@@ -53,7 +54,11 @@
         justify-content: center;
         margin-top: 10px;
         font-size: 18px;
-        color: ;
+    }
+
+    .list-value-1 {
+        margin-bottom: 40px;
+
     }
 
 </style>
