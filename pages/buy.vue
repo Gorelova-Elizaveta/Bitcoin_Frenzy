@@ -24,9 +24,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: rgb(31, 55, 125);
     }
-
     .buy-bitcoin {
         width: 150px;
         height: 50px;
@@ -36,7 +34,11 @@
         color: white;
         font-weight: 300;
         border-color:  rgb(31, 55, 125);
-
     }
+    .buy-bitcoin:hover {
+        background-color: rgb(10, 25, 69);
+        transition: 1s;
+    } 
+
 
 </style>
