@@ -11,8 +11,12 @@ export const mutations = {
         
     },
     setUsersMoneyWithdraw(state) {
-        if ( state.usersMoney < 100) { state.errors.push('impossible to withdraw')}
-        else{
+        if ( state.usersMoney < 100) {
+            $nuxt.$bvToast.toast('impossible to withdraw', {
+            title: 'BootstrapVue Toast',
+            autoHideDelay: 5000,
+        })}
+        else {
           state.usersMoney -= 100
           state.actionList.unshift({value:'100$ Withdrawal', date: Date.now()});
         }
@@ -23,7 +27,12 @@ export const mutations = {
 
     },
     setUsersBitcoin(state) {
-        if(state.usersMoney < state.bitcoinRate) { alert ("ывикыеиык")}
+        if(state.usersMoney < state.bitcoinRate) { 
+            $nuxt.$bvToast.toast('insufficient funds', {
+                title: 'BootstrapVue Toast',
+                autoHideDelay: 5000,
+            })
+        }
         else {
         state.usersMoney -= state.bitcoinRate;
         state.usersBitcoin += 1;
@@ -31,7 +40,12 @@ export const mutations = {
         }
     },
     setUsersBitcoinSell(state) {
-        if(!state.usersBitcoin) {alert("pppppp")}
+        if(!state.usersBitcoin) {
+            $nuxt.$bvToast.toast('not enough bitcoins', {
+                title: 'BootstrapVue Toast',
+                autoHideDelay: 5000,
+            })
+        }
         else {
             state.usersBitcoin -=1;
             state.usersMoney =+ state.bitcoinRate;
@@ -45,7 +59,12 @@ export const mutations = {
     },
 
     setBitcoinRateDecreased(state) {
-        if(state.bitcoinRate <= 1000) {alert('aaaa')}
+        if(state.bitcoinRate <= 1000) {
+            $nuxt.$bvToast.toast('cannot be reduced', {
+                title: 'BootstrapVue Toast',
+                autoHideDelay: 5000,
+            })
+        }
         else{
             state.bitcoinRate -= 1000;
             state.actionList.unshift({value:'Decreased Bitcoin price by 1,000$', date: Date.now()})

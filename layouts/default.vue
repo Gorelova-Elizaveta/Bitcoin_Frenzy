@@ -13,8 +13,8 @@
   import BasicComponents from "../components/BasicComponents.vue";
   
   export default {
-  components: { BasicComponents }
-   }
+    components: { BasicComponents }
+  }
 
 
 
