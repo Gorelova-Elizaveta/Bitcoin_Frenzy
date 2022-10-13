@@ -37,6 +37,12 @@ export default {
     'bootstrap-vue/nuxt',
   ],
 
+  bootstrapVue: {
+    componentPlugins: [
+      'BVToastPlugin',
+    ],
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
