@@ -2,7 +2,7 @@
   <div class="wallet_container">
     <div class="text_block">
       <span class="ffff">Your Bitcoin wallet</span>
-      <span class="ffff">You now own {{usersBitcoin}} Bitcoins</span>
+      <span class="ffff">You now own {{$store.state.user.usersBitcoin}} Bitcoins</span>
       <button  @click="setUsersMoneyDeposit" class="moneys_button moneys_button-indent ">deposit 100$</button>
       <button @click="setUsersMoneyWithdraw" class="moneys_button">withdraw 100$</button>
     </div>
@@ -16,14 +16,16 @@ import { mapState, mapMutations } from 'vuex'
   computed: mapState([ 'usersBitcoin']),
   
   methods:{
-    ...mapMutations(['setUsersMoneyDeposit', 'setUsersMoneyWithdraw']),
+    ...mapMutations({
+      setUsersMoneyDeposit: 'user/setUsersMoneyDeposit',
+      setUsersMoneyWithdraw:'user/setUsersMoneyWithdraw'}),
   }
  }
 
 
 </script>
 
-<style>
+<style lang="scss">
   .wallet_container{
     position: absolute;
     width:700px;

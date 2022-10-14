@@ -13,7 +13,7 @@ export default {
 }
 
 </script>
-<style>
+<style lang="scss">
     .container-sell-bitcoin {
         position: absolute;
         width:700px;

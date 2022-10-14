@@ -1,18 +1,20 @@
 <template>
     <div class="container-buy-page">
-    <button @click="setUsersBitcoin" class="buy-bitcoin">Buy 1 bitcoin</button>
+    <button @click="setUsersBitcoin($store.state.price.bitcoinRate)" class="buy-bitcoin">Buy 1 bitcoin</button>
     </div>
 </template>
 <script>
    import { mapMutations } from 'vuex';
    export default {
     methods:{
-    ...mapMutations(['setUsersBitcoin']),
-  }
+        ...mapMutations({
+            setUsersBitcoin: 'user/setUsersBitcoin'
+        }),
+    }
    }
 
 </script>
-<style>
+<style lang="scss">
     .container-buy-page {
         position: absolute;
         width:700px;
@@ -38,7 +40,5 @@
     .buy-bitcoin:hover {
         background-color: rgb(10, 25, 69);
         transition: 1s;
-    } 
-
-
+    }
 </style>

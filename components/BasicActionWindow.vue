@@ -1,8 +1,8 @@
 <template>
 <div class="container-for-actions">
-<div  class="empty_history" v-if="!actionList.length">empty history...</div>
+<div  class="empty_history" v-if="!$store.state.user.actionList.length">empty history...</div>
     <ul class="catalogue" id="v-for-object">
-        <li class="list-child" v-for="data of actionList" :key="data.date" >
+        <li class="list-child" v-for="data of $store.state.user.actionList" :key="data.date" >
             <div class="list-value">{{ new Date(data.date).toLocaleString().slice(0, -3) }} </div>
             <div class="list-value-1">{{ data.value }}</div>
         </li>
@@ -11,14 +11,12 @@
 </div>
 </template>
 <script>
-    import { mapState } from 'vuex';
     export default {
     name: 'BasicActionWindow',
-    computed: mapState([ 'actionList']),
 }
 
 </script>
-<style>
+<style lang="scss">
     ul {
         margin: 0;
         padding:0;
@@ -27,9 +25,9 @@
         position: absolute;
         right: 0;
         width:  300px;
-        height: 100vh;
+        height: calc(100% - 55px);
         background-color: rgb(210 210 210);
-        overflow: scroll;
+        overflow-y: scroll;
     }
     .catalogue {
         color: rgb(31, 55, 125);

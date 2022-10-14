@@ -1,61 +1,49 @@
 <template>
-  <div class="topic">
+  <header class="topic">
     <div class="ic-ti">
-      <img  class="bitcoin_icon" src="../png/bitcoin-btc-logo.png">
+      <img  class="bitcoin_icon" src="~/assets/logo/bitcoin-btc-logo.png">
       <span class="title">BITCOIN FRENZY</span>
    </div>
-    <div class="bitcoin_price_title"> 1 Bitcoin = {{bitcoinRate}} $</div>
+    <div class="bitcoin_price_title"> 1 BTC = {{$store.state.price.bitcoinRate}} $</div>
     <div class="users_money">
-      <span >{{usersMoney}} $</span>
-      <span>{{usersBitcoin}} BITCOIN</span>
-    
+      <span >{{$store.state.user.usersMoney}} $</span>
+      <span>{{$store.state.user.usersBitcoin}} BTC</span>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-
   export default {
     name: 'BasicHeader',
-    computed: mapState(['bitcoinRate', 'usersMoney', 'usersBitcoin'])
-  } 
-
+  }
 </script>
-<style>
+<style lang="scss">
   .topic {
     background-color: rgb(31, 55, 125);
     width: 100%;
     height: 55px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 55px;
-
+    padding-right: 120px;
+    font-weight: 200;
   }
   .bitcoin_icon {
     width: 35px;
     height: 35px;
-    margin-top: 8px; 
   }
   .title {
     color:white;
-    margin-top: 10px;
     font-size: 20px;
-    font-weight: 200;
   }
   .bitcoin_price_title {
     color: white;
-    margin-top: 10px;
-    font-weight: 200;
     font-size: 18px;
   }
   .users_money {
     color: white;
-    font-weight: 200;
     display: flex;
     flex-direction: column;
-    padding-right:120px;
-
   }
-
 </style>

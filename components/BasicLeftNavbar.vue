@@ -1,36 +1,33 @@
 <template>
-<div class="left-navbar">
+<nav class="left-navbar">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <nuxt-link  active-class="active" class="nav-link" to="/"> MY WALLET </nuxt-link>
-      </li>
-      <li class="nav-item">
-        <nuxt-link active-class="active" class="nav-link" to="/buy">BUY BITCOIN</nuxt-link>
-      </li>
-      <li class="nav-item dropdown">
-      </li>
-      <li class="nav-item">
-      <nuxt-link active-class="active" class="nav-link" to="/sell">SELL BITCOIN</nuxt-link>
-      </li>
-      <li class="nav-item">
-      <nuxt-link active-class="active" class="nav-link" to="/price">BITCOIN PRICE</nuxt-link>
+      <li v-for="{path, title} in refList" :key="path" :title="title" class="nav-item active">
+        <nuxt-link active-class="active" class="nav-link" :to="path">{{title}}</nuxt-link>
       </li>
     </ul>
-</div>
+</nav>
 </template>
 <script>
 export default {
-    name: 'BasicLeftNavbar'
+    name: 'BasicLeftNavbar',
+    data: () => {
+      return {
+        refList: [
+          {path: "/", title: "MY WALLET"},
+          {path: "/buy", title: "BUY BITCOIN"},
+          {path: "/sell", title: "SELL BITCOIN"},
+          {path: "/price", title: "BITCOIN PRICE"},
+        ]
+      }
+    },
+
 }
 </script>
-<style>
-  body {
-    overflow: hidden;
-  }
+<style lang="scss" scoped>
  .left-navbar {
     position: absolute;
   /* margin-top: 55px; */
-    height: 100vh;
+    height: calc(100% - 55px);
     width: 250px;
     background-color: rgb(31, 55, 125) ;
  }

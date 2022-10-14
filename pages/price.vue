@@ -14,7 +14,7 @@ export default {
 }
 
 </script>
-<style>
+<style lang="scss">
     .container-price-bitcoin {
         position: absolute;
         width:700px;
