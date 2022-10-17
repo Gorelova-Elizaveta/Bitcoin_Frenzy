@@ -1,13 +1,12 @@
-
 <template>
-  <div>
+  <main>
     <BasicComponents/>
     <section class ="main">
       <div class="container">
         <Nuxt/>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 <script>
   import BasicComponents from "../components/BasicComponents.vue";

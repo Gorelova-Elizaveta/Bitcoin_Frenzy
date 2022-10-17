@@ -2,7 +2,7 @@ export default {
     setUsersMoneyWithdraw(state) {
         if ( state.usersMoney < 100) {
             $nuxt.$bvToast.toast('impossible to withdraw', {
-            title: 'BootstrapVue Toast',
+            title: 'error',
             variant: 'danger',
             autoHideDelay: 5000,
         })}
@@ -18,7 +18,7 @@ export default {
     setUsersBitcoin(state, bitcoinRate) {
         if(state.usersMoney < bitcoinRate) { 
             $nuxt.$bvToast.toast('insufficient funds', {
-                title: 'BootstrapVue Toast',
+                title: 'error',
                 variant: 'danger',
                 autoHideDelay: 5000,
             })
@@ -32,7 +32,7 @@ export default {
     setUsersBitcoinSell(state) {
         if(!state.usersBitcoin) {
             $nuxt.$bvToast.toast('not enough bitcoins', {
-                title: 'BootstrapVue Toast',
+                title: 'error',
                 variant: 'danger',
                 autoHideDelay: 5000,
             })

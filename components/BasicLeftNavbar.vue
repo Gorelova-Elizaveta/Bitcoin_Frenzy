@@ -2,7 +2,7 @@
 <nav class="left-navbar">
     <ul class="navbar-nav mr-auto">
       <li v-for="{path, title} in refList" :key="path" :title="title" class="nav-item active">
-        <nuxt-link active-class="active" class="nav-link" :to="path">{{title}}</nuxt-link>
+        <nuxt-link active-class="active" class="nav-link" :to="path" exact>{{title}}</nuxt-link>
       </li>
     </ul>
 </nav>
@@ -26,12 +26,10 @@ export default {
 <style lang="scss" scoped>
  .left-navbar {
     position: absolute;
-  /* margin-top: 55px; */
     height: calc(100% - 55px);
     width: 250px;
     background-color: rgb(31, 55, 125) ;
  }
-
  .nav-link {
     color: white;
     font-weight: 300;
@@ -42,6 +40,10 @@ export default {
  .navbar-nav {
   margin-left: 10px;
   margin-top: 45px;
+ }
+
+ .active {
+  color: brown;
  }
 
 </style>

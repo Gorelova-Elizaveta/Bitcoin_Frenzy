@@ -1,17 +1,16 @@
 <template>
-    <div class="container-sell-bitcoin">
-    <button @click="setUsersBitcoinSell" class="sell-bitcoin">Sold 1 Bitcoin</button> 
-    </div>
+    <main class="container-sell-bitcoin">
+    <MyButton @click="setUsersBitcoinSell">Sold 1 Bitcoin</MyButton>
+    </main>
 </template>
 <script>
 import { mapMutations } from 'vuex';
 export default {
     methods:{
-        ...mapMutations(['setUsersBitcoinSell'])
+        ...mapMutations({
+            setUsersBitcoinSell: 'user/setUsersBitcoinSell'})
     }
-
 }
-
 </script>
 <style lang="scss">
     .container-sell-bitcoin {

@@ -1,8 +1,8 @@
 <template>
   <header class="topic">
-    <div class="ic-ti">
+    <div class="logo_container">
       <img  class="bitcoin_icon" src="~/assets/logo/bitcoin-btc-logo.png">
-      <span class="title">BITCOIN FRENZY</span>
+      <span  translate="no" class="title">BITCOIN FRENZY</span>
    </div>
     <div class="bitcoin_price_title"> 1 BTC = {{$store.state.price.bitcoinRate}} $</div>
     <div class="users_money">
@@ -28,22 +28,22 @@
     padding-left: 55px;
     padding-right: 120px;
     font-weight: 200;
+    color:white;
+    font-size: 18px;
   }
   .bitcoin_icon {
     width: 35px;
     height: 35px;
   }
-  .title {
-    color:white;
-    font-size: 20px;
-  }
-  .bitcoin_price_title {
-    color: white;
-    font-size: 18px;
-  }
   .users_money {
-    color: white;
     display: flex;
     flex-direction: column;
   }
+  .logo_container {
+    display: flex;
+    align-items: center;
+    gap: 5px
+  }
+
+  
 </style>

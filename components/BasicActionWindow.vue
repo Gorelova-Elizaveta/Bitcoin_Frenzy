@@ -1,5 +1,5 @@
 <template>
-<div class="container-for-actions">
+<section class="container-for-actions">
 <div  class="empty_history" v-if="!$store.state.user.actionList.length">empty history...</div>
     <ul class="catalogue" id="v-for-object">
         <li class="list-child" v-for="data of $store.state.user.actionList" :key="data.date" >
@@ -8,7 +8,7 @@
         </li>
     </ul>
 
-</div>
+</section>
 </template>
 <script>
     export default {
@@ -28,11 +28,9 @@
         height: calc(100% - 55px);
         background-color: rgb(210 210 210);
         overflow-y: scroll;
-    }
-    .catalogue {
         color: rgb(31, 55, 125);
         list-style: none;
-    } 
+    }
 
     .list-child {
         border-bottom: 2px solid gray;
@@ -52,11 +50,6 @@
         justify-content: center;
         margin-top: 10px;
         font-size: 18px;
-    }
-
-    .list-value-1 {
-        margin-bottom: 40px;
-
     }
 
 </style>

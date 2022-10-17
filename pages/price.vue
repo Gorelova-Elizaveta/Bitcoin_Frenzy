@@ -1,14 +1,16 @@
 <template>
-    <div class="container-price-bitcoin">
-    <button @click="setBitcoinRateIncreased" class="price-bitcoin">Increased Bitcoin price by 1,000$</button> 
-    <button @click="setBitcoinRateDecreased" class="price-bitcoin">Decreased Bitcoin price by 1,000$</button> 
-    </div>
+    <main class="container-price-bitcoin">
+    <MyButton class="repair_button" @click="setBitcoinRateIncreased($store.state.user.actionList)">Increased Bitcoin price by 1,000$</MyButton>
+    <MyButton class="repair_button" @click="setBitcoinRateDecreased($store.state.user.actionList)">Decreased Bitcoin price by 1,000$</MyButton>
+    </main>
 </template>
 <script>
 import { mapMutations } from 'vuex';
 export default {
     methods:{
-        ...mapMutations(['setBitcoinRateIncreased', 'setBitcoinRateDecreased'])
+        ...mapMutations({
+            setBitcoinRateIncreased: 'price/setBitcoinRateIncreased', 
+            setBitcoinRateDecreased: 'price/setBitcoinRateDecreased'})
     }
 
 }
@@ -42,5 +44,11 @@ export default {
     .price-bitcoin:hover {
         background-color: rgb(10, 25, 69);
         transition: 1s;
+    }
+
+    .repair_button {
+    width: 179px;
+    height: 70px;
+
     }
 </style>

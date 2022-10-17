@@ -1,19 +1,19 @@
 export default {
-    setBitcoinRateIncreased(state) {
+    setBitcoinRateIncreased(state, actionList) {
         state.bitcoinRate += 1000;
-        state.actionList.unshift({value:'Increased Bitcoin price by 1,000$', date: Date.now()})
+        actionList.unshift({value:'Increased Bitcoin price by 1,000$', date: Date.now()})
     },
-    setBitcoinRateDecreased(state) {
+    setBitcoinRateDecreased(state, actionList) {
         if(state.bitcoinRate <= 1000) {
             $nuxt.$bvToast.toast('cannot be reduced', {
-                title: 'BootstrapVue Toast',
+                title: 'error',
                 variant: 'danger',
                 autoHideDelay: 5000,
             })
         }
         else{
             state.bitcoinRate -= 1000;
-            state.actionList.unshift({value:'Decreased Bitcoin price by 1,000$', date: Date.now()})
+            actionList.unshift({value:'Decreased Bitcoin price by 1,000$', date: Date.now()})
         }
     },
 }
