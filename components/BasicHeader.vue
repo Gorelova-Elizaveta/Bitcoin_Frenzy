@@ -1,11 +1,11 @@
 <template>
   <header class="topic">
-    <div class="logo_container">
-      <img  class="bitcoin_icon" src="~/assets/logo/bitcoin-btc-logo.png">
+    <div class="logo-container">
+      <img  class="bitcoin-icon" src="~/assets/logo/bitcoin-btc-logo.png">
       <span  translate="no" class="title">BITCOIN FRENZY</span>
    </div>
-    <div class="bitcoin_price_title"> 1 BTC = {{$store.state.price.bitcoinRate}} $</div>
-    <div class="users_money">
+    <div class="bitcoin-price-title"> 1 BTC = {{$store.state.price.bitcoinRate}} $</div>
+    <div class="users-money">
       <span >{{$store.state.user.usersMoney}} $</span>
       <span>{{$store.state.user.usersBitcoin}} BTC</span>
     </div>
@@ -31,15 +31,15 @@
     color:white;
     font-size: 18px;
   }
-  .bitcoin_icon {
+  .bitcoin-icon {
     width: 35px;
     height: 35px;
   }
-  .users_money {
+  .users-money {
     display: flex;
     flex-direction: column;
   }
-  .logo_container {
+  .logo-container {
     display: flex;
     align-items: center;
     gap: 5px

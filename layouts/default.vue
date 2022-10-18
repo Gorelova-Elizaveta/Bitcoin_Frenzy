@@ -1,6 +1,8 @@
 <template>
   <main>
-    <BasicComponents/>
+    <BasicHeader/>
+    <BasicLeftNavbar/>
+    <BasicActionWindow/>
     <section class ="main">
       <div class="container">
         <Nuxt/>
@@ -8,10 +10,3 @@
     </section>
   </main>
 </template>
-<script>
-  import BasicComponents from "../components/BasicComponents.vue";
-  
-  export default {
-    components: { BasicComponents }
-  }
-</script>

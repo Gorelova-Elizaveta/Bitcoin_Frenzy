@@ -5,7 +5,7 @@ export default {
     },
     setBitcoinRateDecreased(state, actionList) {
         if(state.bitcoinRate <= 1000) {
-            $nuxt.$bvToast.toast('cannot be reduced', {
+            $nuxt.$bvToast.toast('Bitcoin price cannot be below 1,000$', {
                 title: 'error',
                 variant: 'danger',
                 autoHideDelay: 5000,

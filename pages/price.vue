@@ -1,7 +1,16 @@
 <template>
     <main class="container-price-bitcoin">
-    <MyButton class="repair_button" @click="setBitcoinRateIncreased($store.state.user.actionList)">Increased Bitcoin price by 1,000$</MyButton>
-    <MyButton class="repair_button" @click="setBitcoinRateDecreased($store.state.user.actionList)">Decreased Bitcoin price by 1,000$</MyButton>
+      <span>Bitcoin price is {{$store.state.price.bitcoinRate}}$</span>
+      <section class="price-button">
+        <MyButton @click="setBitcoinRateIncreased($store.state.user.actionList)">
+        Increased Bitcoin 
+        price by 1,000$
+        </MyButton>
+        <MyButton @click="setBitcoinRateDecreased($store.state.user.actionList)">
+        Decreased Bitcoin 
+        price by 1,000$
+        </MyButton>
+      </section>
     </main>
 </template>
 <script>
@@ -12,9 +21,7 @@ export default {
             setBitcoinRateIncreased: 'price/setBitcoinRateIncreased', 
             setBitcoinRateDecreased: 'price/setBitcoinRateDecreased'})
     }
-
 }
-
 </script>
 <style lang="scss">
     .container-price-bitcoin {
@@ -25,16 +32,16 @@ export default {
         margin-top: 15%;
         display: flex;
         flex-direction: column;
-        display: flex;
-        flex-direction: column;
         align-items: center;
         gap: 20px;
+        color: rgb(31, 55, 125);
+        font-weight: 500;
     }
+
     .price-bitcoin {
         width: 250px;
         height: 70px;
         border-radius: 10px;
-        font-size: 18px;
         background-color: rgb(31, 55, 125);
         color: white;
         font-weight: 300;
@@ -46,9 +53,9 @@ export default {
         transition: 1s;
     }
 
-    .repair_button {
-    width: 179px;
-    height: 70px;
+    .price-button {
+        margin-top: 30px;
+        white-space: pre-wrap;
 
     }
 </style>

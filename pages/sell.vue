@@ -1,6 +1,9 @@
 <template>
     <main class="container-sell-bitcoin">
-    <MyButton @click="setUsersBitcoinSell">Sold 1 Bitcoin</MyButton>
+     <span>Bitcoin price is {{$store.state.price.bitcoinRate}}$</span>
+     <div class="price-warning" v-if="$store.state.price.bitcoinRate >= 10000">Prices are high, sell now!</div>
+     <div class="price-warning" v-else>Prices are low, are you sure you want to sell?</div>
+    <MyButton @click="setUsersBitcoinSell">Sell 1 Bitcoin</MyButton>
     </main>
 </template>
 <script>
@@ -21,15 +24,14 @@ export default {
         margin-top: 15%;
         display: flex;
         flex-direction: column;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        align-items: center;;
+        color: rgb(31, 55, 125);
+        font-weight: 500;
     }
     .sell-bitcoin {
         width: 150px;
         height: 50px;
         border-radius: 10px;
-        font-size: 20px;
         background-color: rgb(31, 55, 125);
         color: white;
         font-weight: 300;

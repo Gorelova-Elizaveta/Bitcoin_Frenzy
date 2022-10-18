@@ -1,5 +1,5 @@
 <template>
-    <button class="buy-bitcoin" @click="$emit('click')">
+    <button class="overall-button" @click="$emit('click')">
         <slot />
     </button>
 </template>
@@ -8,18 +8,17 @@
         emits: ['click']
     }
 </script>
-<style lang="scss">
-    .buy-bitcoin {
-        width: 150px;
-        height: 50px;
+<style lang="scss"> 
+    .overall-button {
         border-radius: 10px;
-        font-size: 20px;
         background-color: rgb(31, 55, 125);
         color: white;
         font-weight: 300;
-        border-color:  rgb(31, 55, 125);
+        border-color:rgb(31, 55, 125);
+        padding: 0 15px 0 15px
     }
-    .buy-bitcoin:hover {
+
+    .overall-button:hover {
         background-color: rgb(10, 25, 69);
         transition: 1s;
     }

@@ -1,6 +1,6 @@
 <template>
-  <main class="wallet_container">
-    <div class="text_block">
+  <main class="wallet-container">
+    <div class="text-block">
       <span class="informational">Your Bitcoin wallet</span>
       <span class="informational">You now own {{$store.state.user.usersBitcoin}} Bitcoins</span>
       <MyButton @click="setUsersMoneyDeposit">deposit 100$</MyButton>
@@ -13,8 +13,6 @@
 import { mapState, mapMutations } from 'vuex'
 
  export default {
-  computed: mapState([ 'usersBitcoin']),
-  
   methods:{
     ...mapMutations({
       setUsersMoneyDeposit: 'user/setUsersMoneyDeposit',
@@ -24,7 +22,7 @@ import { mapState, mapMutations } from 'vuex'
 </script>
 
 <style lang="scss">
-  .wallet_container{
+  .wallet-container{
     position: absolute;
     width:700px;
     height: 400px;
@@ -34,12 +32,11 @@ import { mapState, mapMutations } from 'vuex'
     flex-direction: column;
   }
 
-  .text_block{
+  .text-block{
     display: flex;
     flex-direction: column;
     align-items: center;
     color: rgb(31, 55, 125);
-    font-size: 20px;
     font-weight: 500;
     gap: 20px;
   }

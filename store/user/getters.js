@@ -5,7 +5,7 @@ export default {
     getUsersBitcoin(store) {
         return store.usersBitcoin
     }, 
-    getActionList(store){
+    getActionList(store ){
         return store.actionList
     },
 }
