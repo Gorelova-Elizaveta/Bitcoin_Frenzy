@@ -1,6 +1,6 @@
 <template>
     <main class="container-price-bitcoin">
-      <span>Bitcoin price is {{$store.state.price.bitcoinRate}}$</span>
+      <span class="description">Bitcoin price is {{$store.state.price.bitcoinRate}}$</span>
       <section class="price-button">
         <MyButton @click="setBitcoinRateIncreased($store.state.user.actionList)">
         Increased Bitcoin 
@@ -56,6 +56,9 @@ export default {
     .price-button {
         margin-top: 30px;
         white-space: pre-wrap;
+    }
 
+    .description {
+        font-size: 20px;
     }
 </style>

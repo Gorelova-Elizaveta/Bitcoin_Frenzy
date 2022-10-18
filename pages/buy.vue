@@ -1,8 +1,8 @@
 <template>
     <main class="container-buy-page">
-    <span>Bitcoin price is {{$store.state.price.bitcoinRate}}$</span>
-    <div class="price-warning" v-if="$store.state.price.bitcoinRate >= 10000">Prices are high, are you sure that you want to buy?</div>
-    <div class="price-warning" v-else>Prices are low, buy more!"</div>
+    <span class="description">Bitcoin price is {{$store.state.price.bitcoinRate}}$</span>
+    <div class="description" v-if="$store.state.price.bitcoinRate >= 10000">Prices are high, are you sure that you want to buy?</div>
+    <div class="description" v-else>Prices are low, buy more!"</div>
         <MyButton @click="setUsersBitcoin($store.state.price.bitcoinRate)">Buy 1 Bitcoin</MyButton>
     </main>
 </template>
@@ -31,8 +31,9 @@
         font-weight: 500;
         
     }
-    .price-warning {
-        margin-top: 35px;
-        margin-bottom: 35px;
+    .description{
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 20px;
     }
 </style>
